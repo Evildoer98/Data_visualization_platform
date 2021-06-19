@@ -33,6 +33,7 @@ module.exports.listen = () => {
             // wss.clients // 所有客户端的连接
             wss.clients.forEach(client => {
                 client.send(msg)
+                console.log('所有数据都来啦');
             })
         }
         // 由服务端往客户端发送数据

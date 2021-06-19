@@ -140,9 +140,20 @@
 
 8. @apiSuccess 定义 API 接口需要的响应成功
 
-9. @apiError 定义 API 接口需要的响应错误
+9. @apiSuccessExample 
+    ```
+        @apiSuccessExample Success-Response:
+         {
+            "action": "getData",
+            "socketType": "trendData",
+            "charName": "trend",
+            "value": "",
+            "data": "从文件读取出来的json文件的内容"
+         }
+    ```
+10. @apiError 定义 API 接口需要的响应错误
 
-10. @apiPermission 定义 API 接口需要的权限点
+11. @apiPermission 定义 API 接口需要的权限点
     ```
         @apiPermission name
     ```

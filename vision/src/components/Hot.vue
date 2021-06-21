@@ -51,6 +51,7 @@ export default {
       if (!this.allData) {
         return ''
       } else {
+        console.log(this.allData[this.currentIndex].name)
         return this.allData[this.currentIndex].name
       }
     },
@@ -65,6 +66,7 @@ export default {
   watch: {
     theme () {
       // console.log('主题切换了')
+      // 销毁当前实例
       this.chartInstance.dispose()
       this.initChart()
       this.screenAdapter()
@@ -73,17 +75,21 @@ export default {
   },
   methods: {
     initChart () {
+      // 获取节点并设置主题样式
       this.chartInstance = this.$echarts.init(this.$refs.hot_ref, this.theme)
       const initOption = {
+        // 标题组件（内容及位置）
         title: {
           text: '┃ 热销商品的占比',
           left: 20,
           top: 20
         },
+        // 图例组件（位置及样式）
         legend: {
           top: '15%',
           icon: 'circle'
         },
+        // 提示框组件（）
         tooltip: {
           show: true,
           formatter: arg => {
@@ -103,12 +109,14 @@ export default {
             return retStr
           }
         },
+        // 图表类型
         series: [
           {
             type: 'pie',
             label: {
               show: false
             },
+            // 扇区和标签样式
             emphasis: {
               label: {
                 show: true

@@ -1,0 +1,7 @@
+{
+    "name": "电商实时监控平台API",
+    "version": "1.0.0",
+    "description": "api接口文档",
+    "title": "电商实时监控平台",
+    "url" : "http://localhost:3000/"
+}
